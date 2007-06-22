@@ -1,5 +1,5 @@
 %define version   0.0.1
-%define release   %mkrel 1
+%define release   %mkrel 2
 %define src_name  honoka-coh
 
 %define scim_honoka_version 0.8.2
