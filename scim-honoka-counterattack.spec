@@ -15,6 +15,7 @@ Group:		Games/Other
 License:	GPL
 URL:		http://nop.net-p.org/modules/pukiwiki/index.php?%5B%5Bhonoka%2Fplugin%5D%5D
 Source0:	%{src_name}-%{version}.tar.bz2
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-root
 Requires:		%{libname} = %{version}
 Requires:		scim-honoka >= %{scim_honoka_version}
 BuildRequires:		scim-honoka-devel >= %{scim_honoka_version}
