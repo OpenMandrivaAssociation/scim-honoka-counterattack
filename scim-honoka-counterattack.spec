@@ -1,5 +1,5 @@
 %define version   0.0.1
-%define release   %mkrel 4
+%define release   %mkrel 5
 %define src_name  honoka-coh
 
 %define scim_honoka_version 0.8.2
@@ -47,17 +47,17 @@ Scim-honoka-counterattack library.
 %make
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
+
 %makeinstall_std
 
 # remove unnecessary files
-rm -f %{buildroot}/%{_libdir}/scim-1.0/*/*.a
+rm -f %{buildroot}%{scim_plugins_dir}/honoka/*.{a,la}
 
 %find_lang %{src_name}
 
 %clean
-rm -rf $RPM_BUILD_ROOT
-
+rm -rf %{buildroot}
 
 %files -f %{src_name}.lang
 %defattr(-,root,root)
@@ -66,7 +66,4 @@ rm -rf $RPM_BUILD_ROOT
 %files -n %{libname}
 %defattr(-,root,root)
 %doc AUTHORS ChangeLog COPYING
-%{_libdir}/scim-1.0/honoka/*.la
-%{_libdir}/scim-1.0/honoka/*.so
-
-
+%{scim_plugins_dir}/honoka/*.so
